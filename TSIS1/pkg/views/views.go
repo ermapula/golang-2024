@@ -34,7 +34,7 @@ func CarsOne(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if id > len(cars) || id < 0 {
+	if id > len(cars) || id <= 0 {
 		w.Write([]byte("A car with this id doesn't exist"))
 		return
 	}
