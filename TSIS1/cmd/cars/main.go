@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ermapula/golang-2024/pkg/views"
+	cars "github.com/ermapula/golang-2024/pkg/cars"
 
 	"github.com/gorilla/mux"
 )
@@ -12,10 +12,10 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/health-check", views.HealthCheck).Methods("GET")
-	r.HandleFunc("/cars", views.Cars).Methods("GET")
-	r.HandleFunc("/cars/{id}", views.CarsOne).Methods("GET")
-	
+	r.HandleFunc("/health-check", cars.HealthCheck).Methods("GET")
+	r.HandleFunc("/cars", cars.Cars).Methods("GET")
+	r.HandleFunc("/cars/{id}", cars.CarsOne).Methods("GET")
+
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<p>/health-check - check api</p> <p>/cars - info of the race cars from Cars 2</p> <p>/cars/{id} - info of a specific car</p>")
 	})

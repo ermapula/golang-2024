@@ -1,4 +1,4 @@
-package views
+package cars
 
 type Response struct {
 	Cars []Car `json:"cars"`
