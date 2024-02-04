@@ -2,9 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
-	"strconv"
 
 	cars "github.com/ermapula/golang-2024/pkg/cars"
 
